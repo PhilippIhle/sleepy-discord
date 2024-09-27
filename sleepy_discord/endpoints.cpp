@@ -30,7 +30,7 @@ namespace SleepyDiscord {
 		doc.AddMember("content", content, allocator);
 		if (tts == TTS::EnableTTS) doc.AddMember("tts", true, allocator);
 		if (!embed.empty()) doc.AddMember("embed", json::toJSON(embed, allocator), allocator);
-		if (!replyingTo.messageID.empty()) doc.AddMember("message_reference", json::toJSON(embed, allocator), allocator);
+		if (!replyingTo.messageID.empty()) doc.AddMember("message_reference", json::toJSON(replyingTo, allocator), allocator);
 		return json::stringify(doc);
 	}
 
